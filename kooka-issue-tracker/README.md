@@ -42,11 +42,11 @@ src/
   index.css      Tailwind + design tokens (oklch)
   routes.tsx     route + nav manifest (add a page here)
   components/    app-shell, PDF target export button, error-boundary, confirm-dialog, protected spatial-map, states, page-section + ui/ (shadcn, pre-installed)
+  generated/     typed Power Apps connector client used for issue data (do not edit)
   hooks/         reusable hooks (use-mobile, use-confirm)
   lib/           cn(), query-client, PDF Blob helper, store (zustand), safe-url, console capture, protected spatial tile bytes, Cowork parent transport
   pages/         route-level screens (home, not-found)
   types/         fixed parent-frame message contract
-generated/       typed connector client, present only when the app carries a binding (do not edit)
 ```
 
 `src/components/spatial-map.tsx` is the generated-app public map module. Its
@@ -70,7 +70,11 @@ the harness).
 
 ## Live data
 
-An app that carries a data-source binding has its typed client in `generated/` and its
+This app loads issue data through the typed client in `src/generated/` (`@/generated`),
+including list queries, choice lookups, and create, update, and delete operations.
+The root-level `generated/` client is not used by the app.
+
+An app that carries a data-source binding has its legacy typed client in `generated/` and its
 connection reference in `ms.config.json`; the app-data-connectivity skill governs how the agent
 consumes them. Both are managed only by the runtime's typed `appbuilder-DataSourceAdd`,
 `appbuilder-DataSourceRefresh` and `appbuilder-DataSourceRemove` tools (a connector's actions, or one

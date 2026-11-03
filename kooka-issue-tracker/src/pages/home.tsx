@@ -11,11 +11,11 @@ import {
   Users,
 } from "lucide-react";
 import { toast } from "sonner";
-import { Issue_tracker_listService } from "../../generated";
+import { Issue_tracker_listService } from "@/generated";
 import type {
   Issue_tracker_listRead,
   Issue_tracker_listWrite,
-} from "../../generated/models/Issue_tracker_listModel";
+} from "@/generated/models/Issue_tracker_listModel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -302,7 +302,7 @@ export function HomePage() {
 
   function moveTo(issue: Issue, status: string) {
     if (issue.ID === undefined || issue.Status?.Value === status) return;
-    save.mutate({ id: issue.ID, fields: { Status: { Value: status } } });
+    save.mutate({ id: issue.ID, fields: { Status: status } });
   }
 
   async function deleteIssue(issue: Issue) {
@@ -741,9 +741,9 @@ function IssueSheet({
       IssueDescription: description,
       AssignedTeam: team,
     };
-    if (status) fields.Status = { Value: status };
-    if (priority) fields.Priority = { Value: priority };
-    if (category) fields.Category = { Value: category };
+    if (status) fields.Status = status;
+    if (priority) fields.Priority = priority;
+    if (category) fields.Category = category;
     if (reported) fields.ReportedDate = reported;
     if (due) fields.DueDate = due;
     onSave(fields);
