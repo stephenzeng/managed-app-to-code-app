@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "appId": null,
+  "appDisplayName": "kooka-issue-tracker",
+  "region": "prod",
+  "appType": "CodeApp",
+  "environmentId": "4ba4c9e9-40bb-e7ba-b770-8b47b067e506",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "cc741b32-95ec-453e-af68-2aea6b489bc9": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+      "displayName": "SharePoint",
+      "dataSources": [
+        "issue_tracker_list"
+      ],
+      "dataSets": {
+        "https://microsoftapc.sharepoint.com/sites/kooka-test": {
+          "dataSources": {
+            "issue_tracker_list": {
+              "tableName": "issue-tracker-list"
+            }
+          }
+        }
+      }
+    }
+  },
+  "databaseReferences": {}
+}
