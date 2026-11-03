@@ -18,5 +18,5 @@ export interface AppRoute {
 // map over `routes` (e.g. filter to entries with a `label`) so the router and
 // the nav can never drift out of sync. `not-found` is wired in App.tsx.
 export const routes: AppRoute[] = [
-  { path: "/", element: <HomePage />, label: "Home", icon: HomeIcon },
+  { path: "/appruntime/:appId/t/:tenantId/runtimeproxy/:runtimeId", element: <HomePage />, label: "Home", icon: HomeIcon },
 ];
