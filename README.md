@@ -12,7 +12,7 @@ Microsoft may change how Copilot Managed Apps are structured, and this skill may
 
 ## How to install the skill
 
-Copy the entire `convert-managed-app-to-code-app` folder, including all files within it, to:
+Copy the entire `convert-managed-app-to-code-app` folder under `skills`, including all files within it, to:
 
 `%USERPROFILE%\.copilot\skills\`
 
